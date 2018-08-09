@@ -1,0 +1,138 @@
+INFO:sagemaker:Creating training-job with name: sagemaker-tensorflow-2018-08-09-10-16-38-953
+.................
+2018-08-09 10:19:19,888 INFO - root - running container entrypoint
+2018-08-09 10:19:19,889 INFO - root - starting train task
+2018-08-09 10:19:19,894 INFO - container_support.training - Training starting
+2018-08-09 10:19:22,092 INFO - botocore.vendored.requests.packages.urllib3.connectionpool - Starting new HTTP connection (1): 169.254.170.2
+2018-08-09 10:19:22,270 INFO - botocore.vendored.requests.packages.urllib3.connectionpool - Starting new HTTPS connection (1): sagemaker-bi-team.s3.amazonaws.com
+2018-08-09 10:19:22,407 INFO - botocore.vendored.requests.packages.urllib3.connectionpool - Starting new HTTPS connection (1): s3.amazonaws.com
+2018-08-09 10:19:22,454 INFO - tf_container - ----------------------TF_CONFIG--------------------------
+2018-08-09 10:19:22,454 INFO - tf_container - {"environment": "cloud", "cluster": {"master": ["algo-1:2222"]}, "task": {"index": 0, "type": "master"}}
+2018-08-09 10:19:22,454 INFO - tf_container - ---------------------------------------------------------
+2018-08-09 10:19:22,454 INFO - tf_container - creating RunConfig:
+2018-08-09 10:19:22,454 INFO - tf_container - {'save_checkpoints_secs': 300}
+2018-08-09 10:19:22,454 INFO - tensorflow - TF_CONFIG environment variable: {u'environment': u'cloud', u'cluster': {u'master': [u'algo-1:2222']}, u'task': {u'index': 0, u'type': u'master'}}
+2018-08-09 10:19:22,454 INFO - tf_container - invoking the user-provided estimator_fn
+2018-08-09 10:19:22,456 INFO - tensorflow - Using config: {'_save_checkpoints_secs': 300, '_session_config': None, '_keep_checkpoint_max': 5, '_tf_random_seed': None, '_task_type': u'master', '_train_distribute': None, '_is_chief': True, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f1e994b9090>, '_model_dir': u's3://sagemaker-bi-team/emlo-result-screen/model_artifacts/sagemaker-tensorflow-2018-08-09-10-16-38-953/checkpoints', '_num_worker_replicas': 1, '_task_id': 0, '_log_step_count_steps': 100, '_master': '', '_save_checkpoints_steps': None, '_keep_checkpoint_every_n_hours': 10000, '_evaluation_master': '', '_service': None, '_global_id_in_cluster': 0, '_save_summary_steps': 100, '_num_ps_replicas': 0}
+2018-08-09 10:19:22,456 WARNING - tf_container - serving_input_fn not specified, model NOT saved, use checkpoints to reconstruct
+2018-08-09 10:19:22,457 INFO - tensorflow - Skip starting Tensorflow server as there is only one node in the cluster.
+2018-08-09 10:19:22.461130: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing config loader against fileName /root//.aws/config and using profilePrefix = 1
+2018-08-09 10:19:22.461150: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing config loader against fileName /root//.aws/credentials and using profilePrefix = 0
+2018-08-09 10:19:22.461158: I tensorflow/core/platform/s3/aws_logging.cc:54] Setting provider to read credentials from /root//.aws/credentials for credentials file and /root//.aws/config for the config file , for use with profile default
+2018-08-09 10:19:22.461168: I tensorflow/core/platform/s3/aws_logging.cc:54] Creating HttpClient with max connections2 and scheme http
+2018-08-09 10:19:22.461486: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing CurlHandleContainer with size 2
+2018-08-09 10:19:22.461503: I tensorflow/core/platform/s3/aws_logging.cc:54] Creating TaskRole with default ECSCredentialsClient and refresh rate 900000
+2018-08-09 10:19:22.461831: I tensorflow/core/platform/s3/aws_logging.cc:54] Unable to open config file /root//.aws/credentials for reading.
+2018-08-09 10:19:22.461843: I tensorflow/core/platform/s3/aws_logging.cc:54] Failed to reload configuration.
+2018-08-09 10:19:22.461851: I tensorflow/core/platform/s3/aws_logging.cc:54] Unable to open config file /root//.aws/config for reading.
+2018-08-09 10:19:22.461861: I tensorflow/core/platform/s3/aws_logging.cc:54] Failed to reload configuration.
+2018-08-09 10:19:22.461871: I tensorflow/core/platform/s3/aws_logging.cc:54] Credentials have expired or will expire, attempting to repull from ECS IAM Service.
+2018-08-09 10:19:22.461932: I tensorflow/core/platform/s3/aws_logging.cc:54] Pool grown by 2
+2018-08-09 10:19:22.461944: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2018-08-09 10:19:22.464284: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing CurlHandleContainer with size 25
+2018-08-09 10:19:22.465619: I tensorflow/core/platform/s3/aws_logging.cc:54] Pool grown by 2
+2018-08-09 10:19:22.465636: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2018-08-09 10:19:22.519061: E tensorflow/core/platform/s3/aws_logging.cc:60] No response body. Response code: 404
+2018-08-09 10:19:22.519103: W tensorflow/core/platform/s3/aws_logging.cc:57] If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.
+2018-08-09 10:19:22.519713: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2018-08-09 10:19:22,559 ERROR - container_support.training - uncaught exception during training: 'NoneType' object has no attribute 'endswith'
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/container_support/training.py", line 36, in start
+    fw.train()
+  File "/usr/local/lib/python2.7/dist-packages/tf_container/train_entry_point.py", line 164, in train
+    train_wrapper.train()
+  File "/usr/local/lib/python2.7/dist-packages/tf_container/trainer.py", line 73, in train
+    tf.estimator.train_and_evaluate(estimator=estimator, train_spec=train_spec, eval_spec=eval_spec)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 439, in train_and_evaluate
+    executor.run()
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 546, in run
+    getattr(self, task_to_run)()
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 601, in run_master
+    self._start_distributed_training(saving_listeners=saving_listeners)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 739, in _start_distributed_training
+    saving_listeners=saving_listeners)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/estimator.py", line 363, in train
+    loss = self._train_model(input_fn, hooks, saving_listeners)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/estimator.py", line 843, in _train_model
+    return self._train_model_default(input_fn, hooks, saving_listeners)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/estimator.py", line 853, in _train_model_default
+    input_fn, model_fn_lib.ModeKeys.TRAIN))
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/estimator.py", line 691, in _get_features_and_labels_from_input_fn
+    result = self._call_input_fn(input_fn, mode)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/estimator.py", line 798, in _call_input_fn
+    return input_fn(**kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/tf_container/trainer.py", line 117, in <lambda>
+    train_input_fn = lambda: self.customer_script.train_input_fn(**invoke_args)
+  File "/opt/ml/code/SM - EMLO - MultiLabel Result Screen Item Prediction.py", line 410, in train_input_fn
+    return _generate_input_fn(data_dir, filename=params['train_filename'], label=params['label']) \
+  File "/opt/ml/code/SM - EMLO - MultiLabel Result Screen Item Prediction.py", line 404, in _generate_input_fn
+    file_dir = os.path.join(data_dir, filename)
+  File "/usr/lib/python2.7/posixpath.py", line 70, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+
+
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-4-485d83a5f112> in <module>()
+     23                           train_instance_count=1,
+     24                           train_instance_type='ml.c5.xlarge')
+---> 25 tf_estimator.fit(data_dir, wait=True)
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/sagemaker/tensorflow/estimator.py in fit(self, inputs, wait, logs, job_name, run_tensorboard_locally)
+    247                 tensorboard.join()
+    248         else:
+--> 249             fit_super()
+    250 
+    251     @classmethod
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/sagemaker/tensorflow/estimator.py in fit_super()
+    229         """
+    230         def fit_super():
+--> 231             super(TensorFlow, self).fit(inputs, wait, logs, job_name)
+    232 
+    233         if run_tensorboard_locally and wait is False:
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/sagemaker/estimator.py in fit(self, inputs, wait, logs, job_name)
+    179         self.latest_training_job = _TrainingJob.start_new(self, inputs)
+    180         if wait:
+--> 181             self.latest_training_job.wait(logs=logs)
+    182 
+    183     @classmethod
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/sagemaker/estimator.py in wait(self, logs)
+    406     def wait(self, logs=True):
+    407         if logs:
+--> 408             self.sagemaker_session.logs_for_job(self.job_name, wait=True)
+    409         else:
+    410             self.sagemaker_session.wait_for_job(self.job_name)
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/sagemaker/session.py in logs_for_job(self, job_name, wait, poll)
+    893 
+    894         if wait:
+--> 895             self._check_job_status(job_name, description, 'TrainingJobStatus')
+    896             if dot:
+    897                 print()
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/sagemaker/session.py in _check_job_status(self, job, desc, status_key_name)
+    612         if status != 'Completed' and status != 'Stopped':
+    613             reason = desc.get('FailureReason', '(No reason provided)')
+--> 614             raise ValueError('Error training {}: {} Reason: {}'.format(job, status, reason))
+    615 
+    616     def wait_for_endpoint(self, endpoint, poll=5):
+
+ValueError: Error training sagemaker-tensorflow-2018-08-09-10-16-38-953: Failed Reason: AlgorithmError: uncaught exception during training: 'NoneType' object has no attribute 'endswith'
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/container_support/training.py", line 36, in start
+    fw.train()
+  File "/usr/local/lib/python2.7/dist-packages/tf_container/train_entry_point.py", line 164, in train
+    train_wrapper.train()
+  File "/usr/local/lib/python2.7/dist-packages/tf_container/trainer.py", line 73, in train
+    tf.estimator.train_and_evaluate(estimator=estimator, train_spec=train_spec, eval_spec=eval_spec)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 439, in train_and_evaluate
+    executor.run()
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 546, in run
+    getattr(self, task_to_run)()
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/estimator/training.py", line 601, in run_master
+    self._start_distributed_training(saving_listeners=saving_listen
